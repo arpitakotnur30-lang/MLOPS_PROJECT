@@ -1,9 +1,9 @@
-name: CT and Model Deployment
+name: CT Pipeline
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * 0' # Weekly training run
+    - cron: '0 0 * * 0' # Weekly run
 
 jobs:
   continuous-training:
@@ -22,15 +22,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Pull data via DVC
+      - name: Pull Data via DVC
         run: |
-          dvc remote add -d myremote /tmp/dvc-storage || true
-          # Note: For real remote storage like S3/GDrive, configure AWS/GCP credentials in GitHub Secrets
-          dvc pull || echo "No remote configured, using local data"
+          # If using local storage simulation in runner or remote DVC store
+          python -m dvc pull || echo "Skipping dvc remote pull, using local tracked stub"
 
-      - name: Run Model Training
-        env:
-          # Optional: Configure MLflow tracking server URI here (e.g., Dagshub or Databricks)
-          MLFLOW_TRACKING_URI: ${{ secrets.MLFLOW_TRACKING_URI }}
+      - name: Execute Training Script
         run: |
           python src/train.py
