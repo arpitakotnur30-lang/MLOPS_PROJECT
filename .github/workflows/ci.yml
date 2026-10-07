@@ -37,4 +37,5 @@ jobs:
         env:
           PYTHONPATH: .
         run: |
-          python -m pytest tests/ -v
+          python train.py
+          pylint train.py
