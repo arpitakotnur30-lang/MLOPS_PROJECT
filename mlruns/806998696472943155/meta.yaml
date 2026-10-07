@@ -1,0 +1,6 @@
+artifact_location: file:///F:/my-mlops-project/mlruns/806998696472943155
+creation_time: 1791353758151
+experiment_id: '806998696472943155'
+last_update_time: 1791353758151
+lifecycle_stage: active
+name: housing_experiment

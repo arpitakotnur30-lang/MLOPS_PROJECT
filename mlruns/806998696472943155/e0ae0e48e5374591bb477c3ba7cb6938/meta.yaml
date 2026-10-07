@@ -1,0 +1,15 @@
+artifact_uri: file:///F:/my-mlops-project/mlruns/806998696472943155/e0ae0e48e5374591bb477c3ba7cb6938/artifacts
+end_time: 1791354065232
+entry_point_name: ''
+experiment_id: '806998696472943155'
+lifecycle_stage: active
+run_id: e0ae0e48e5374591bb477c3ba7cb6938
+run_name: mysterious-worm-234
+run_uuid: e0ae0e48e5374591bb477c3ba7cb6938
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1791354056196
+status: 3
+tags: []
+user_id: arpit

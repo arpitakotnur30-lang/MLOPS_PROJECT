@@ -1,0 +1,15 @@
+artifact_uri: file:///F:/my-mlops-project/mlruns/806998696472943155/f19e9e84c25d4221bb088b94dc4696a3/artifacts
+end_time: 1791353913731
+entry_point_name: ''
+experiment_id: '806998696472943155'
+lifecycle_stage: active
+run_id: f19e9e84c25d4221bb088b94dc4696a3
+run_name: welcoming-mare-449
+run_uuid: f19e9e84c25d4221bb088b94dc4696a3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1791353904200
+status: 3
+tags: []
+user_id: arpit

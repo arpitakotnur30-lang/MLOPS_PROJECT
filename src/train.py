@@ -9,8 +9,10 @@ import mlflow.sklearn
 def train():
     mlflow.set_experiment("housing_experiment")
     
-    # Load data
-    data_path = "data/housing.csv"
+    # Resolve path relative to this script's directory
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    data_path = os.path.join(BASE_DIR, "../data/housing.csv")
+    
     if not os.path.exists(data_path):
         raise FileNotFoundError(f"Dataset not found at {data_path}. Did you run dvc pull?")
         
@@ -44,7 +46,7 @@ def train():
         mlflow.log_param("learning_rate", learning_rate)
         mlflow.log_metric("mse", mse)
         mlflow.log_metric("r2_score", r2)
-        mlflow.log_model(model, "model")
+        mlflow.sklearn.log_model(model, "model")
         
         print(f"Training complete! MSE: {mse:.4f}, R2: {r2:.4f}")
 
