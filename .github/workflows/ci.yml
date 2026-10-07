@@ -23,11 +23,15 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Create sample dataset for testing
+      - name: Create multi-row sample dataset for testing
         run: |
           mkdir -p data
           echo "MedInc,HouseAge,AveRooms,AveBedrms,Population,AveOccup,Latitude,Longitude,MedHouseVal" > data/housing.csv
           echo "8.3252,41,6.984126,1.02381,322,2.555556,37.88,-122.23,4.526" >> data/housing.csv
+          echo "8.3014,21,6.238137,0.97188,2401,2.109842,37.86,-122.22,3.585" >> data/housing.csv
+          echo "7.2574,52,8.288136,1.073446,496,2.80226,37.85,-122.24,3.521" >> data/housing.csv
+          echo "5.6431,52,5.817352,1.073059,558,2.547945,37.85,-122.25,3.413" >> data/housing.csv
+          echo "3.8462,52,6.281853,1.081081,565,2.181467,37.85,-122.25,3.422" >> data/housing.csv
 
       - name: Run Unit Tests with Pytest
         env:
